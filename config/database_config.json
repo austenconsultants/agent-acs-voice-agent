@@ -1,10 +1,44 @@
 {
   "service": "ACS-Voice-Agent",
-  "database": {
-    "host": "10.152.0.76",
-    "primary": "acs_voice_agent_db",
-    "shared_access": ["user_memory", "conversations", "knowledge_base", "software_catalog", "software_docs"]
+  "version": "2.0",
+  "database_connections": {
+    "primary": {
+      "host": "10.152.0.76",
+      "port": 5432,
+      "database": "acs_voice_agent_db",
+      "user": "acs_chat_user",
+      "password": "chatdb123"
+    },
+    "knowledge_base": {
+      "database": "acs_context_db",
+      "tables": ["user_memory", "conversations", "knowledge_base", "software_catalog", "software_docs"],
+      "access": "read_write_conversations"
+    }
   },
-  "ai_services": ["LiveKit", "OpenAI", "Whisper", "Cartesia"],
-  "expertise": {"LiveKit": 10, "OpenAI API": 10}
+  "ai_services": {
+    "livekit": {
+      "url": "wss://livekit.cloud",
+      "api_key_env": "LIVEKIT_API_KEY"
+    },
+    "openai": {
+      "models": ["gpt-4o", "whisper-1"],
+      "api_key_env": "OPENAI_API_KEY"
+    },
+    "cartesia": {
+      "voice": "sonic-english",
+      "api_key_env": "CARTESIA_API_KEY"
+    }
+  },
+  "capabilities": {
+    "ai_voice_processing": true,
+    "real_time_transcription": true,
+    "voice_synthesis": true,
+    "livekit_expert": true
+  },
+  "expertise_level": {
+    "LiveKit": 10,
+    "OpenAI API": 10,
+    "Whisper": 9,
+    "Python": 8
+  }
 }
