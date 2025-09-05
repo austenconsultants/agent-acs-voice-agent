@@ -1,0 +1,10 @@
+{
+  "service": "ACS-Voice-Agent",
+  "database": {
+    "host": "10.152.0.76",
+    "primary": "acs_voice_agent_db",
+    "shared_access": ["user_memory", "conversations", "knowledge_base", "software_catalog", "software_docs"]
+  },
+  "ai_services": ["LiveKit", "OpenAI", "Whisper", "Cartesia"],
+  "expertise": {"LiveKit": 10, "OpenAI API": 10}
+}
