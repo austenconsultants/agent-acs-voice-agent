@@ -1,25 +1,23 @@
-# ACS Voice Agent
+# Agent: ACS Voice AI Specialist
 
-## Overview
-AI-powered voice processing with real-time capabilities.
+## Purpose
+This is a chatbot agent/persona that helps users manage the AI voice components (LiveKit, OpenAI, Cartesia) of AUSTENTEL-ACS.
 
-## Technology Stack
-- **Real-time**: LiveKit
-- **AI Models**: OpenAI, Cartesia, Whisper
-- **Database**: PostgreSQL + Valkey
-- **Integration**: Receives from Voice Hub
+## What This Agent Does
+- Configures LiveKit real-time voice
+- Manages AI model selection
+- Optimizes voice synthesis settings
+- Handles transcription configuration
+- Controls the voice AI features of AUSTENTEL-ACS
 
-## Architecture
-```
-Voice Agent (3212)
-    ├── LiveKit Server
-    ├── OpenAI Integration
-    ├── Cartesia TTS
-    └── Whisper STT
-```
+## Knowledge Base
+- LiveKit configuration
+- OpenAI voice models
+- Cartesia TTS optimization
+- Whisper transcription
+- Real-time audio processing
 
-## Context Keys
-- `voice_agent.livekit_config` - LiveKit settings
-- `voice_agent.ai_models` - Active AI models
-- `voice_agent.active_sessions` - Live sessions
-- `voice_agent.processing_queue` - Queue state
+## Integration
+This agent is used by the ACS Chat Hub to interact with the main AUSTENTEL-ACS platform.
+
+**Main Platform**: [github.com/Austentel/Austentel](https://github.com/Austentel/Austentel)
